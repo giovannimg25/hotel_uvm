@@ -1,1 +1,402 @@
 
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Cuentas Corporativas | Holiday Estate</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;600;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "on-tertiary-container": "#3e3b35",
+                        "on-background": "#1a1c1a",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#e9c176",
+                        "inverse-surface": "#2f312f",
+                        "primary-fixed": "#ffdea5",
+                        "on-secondary-fixed-variant": "#474747",
+                        "surface-container-low": "#f4f3f1",
+                        "inverse-on-surface": "#f2f1ee",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary-container": "#e4e2e1",
+                        "tertiary": "#615e57",
+                        "surface-container-highest": "#e3e2e0",
+                        "outline": "#7f7667",
+                        "secondary-fixed": "#e4e2e1",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#faf9f6",
+                        "on-surface": "#1a1c1a",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#cbc6bd",
+                        "surface-container-high": "#e9e8e5",
+                        "surface-tint": "#775a19",
+                        "primary-container": "#c5a059",
+                        "surface-container": "#efeeeb",
+                        "inverse-primary": "#e9c176",
+                        "surface-bright": "#faf9f6",
+                        "tertiary-fixed": "#e8e2d9",
+                        "on-secondary-container": "#656464",
+                        "on-primary-container": "#4e3700",
+                        "secondary": "#5f5e5e",
+                        "on-primary-fixed": "#261900",
+                        "primary": "#775a19",
+                        "on-surface-variant": "#4e4639",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#d1c5b4",
+                        "on-tertiary-fixed-variant": "#494640",
+                        "on-tertiary-fixed": "#1d1b16",
+                        "surface-variant": "#e3e2e0",
+                        "surface-dim": "#dbdad7",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#aaa59d",
+                        "background": "#faf9f6"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        body {
+            background-color: #faf9f6;
+            color: #1a1c1a;
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="flex min-h-screen">
+    <!-- Implementación de Barra Lateral -->
+    <aside class="flex flex-col h-screen w-64 border-r-0 bg-[#f4f3f1] dark:bg-stone-900 py-8 fixed left-0 top-0 z-50">
+        <div class="px-8 mb-12">
+            <h1 class="font-['Noto_Serif'] italic text-xl text-[#775a19] dark:text-[#C5A059]">Holiday Estate</h1>
+            <p class="font-['Manrope'] font-semibold text-[10px] uppercase tracking-widest text-[#5f5e5e] mt-1">
+                Suite Corporativa</p>
+        </div>
+        <nav class="flex-1 space-y-2">
+            <a class="flex items-center px-8 py-3 text-[#5f5e5e] dark:text-stone-400 pl-4 hover:text-[#775a19] dark:hover:text-[#C5A059] transition-colors duration-300 font-['Noto_Serif'] font-medium text-sm tracking-wide"
+                href="#">
+                <span class="material-symbols-outlined mr-4" data-icon="dashboard">dashboard</span>
+                Panel
+            </a>
+            <a class="flex items-center px-8 py-3 text-[#775a19] dark:text-[#C5A059] font-bold border-l-2 border-[#775a19] dark:border-[#C5A059] pl-4 font-['Noto_Serif'] text-sm tracking-wide"
+                href="#">
+                <span class="material-symbols-outlined mr-4" data-icon="business_center">business_center</span>
+                Cuentas Corporativas
+            </a>
+            <a class="flex items-center px-8 py-3 text-[#5f5e5e] dark:text-stone-400 pl-4 hover:text-[#775a19] dark:hover:text-[#C5A059] transition-colors duration-300 font-['Noto_Serif'] font-medium text-sm tracking-wide"
+                href="#">
+                <span class="material-symbols-outlined mr-4" data-icon="calendar_month">calendar_month</span>
+                Reservas
+            </a>
+            <a class="flex items-center px-8 py-3 text-[#5f5e5e] dark:text-stone-400 pl-4 hover:text-[#775a19] dark:hover:text-[#C5A059] transition-colors duration-300 font-['Noto_Serif'] font-medium text-sm tracking-wide"
+                href="#">
+                <span class="material-symbols-outlined mr-4" data-icon="analytics">analytics</span>
+                Analíticas
+            </a>
+            <a class="flex items-center px-8 py-3 text-[#5f5e5e] dark:text-stone-400 pl-4 hover:text-[#775a19] dark:hover:text-[#C5A059] transition-colors duration-300 font-['Noto_Serif'] font-medium text-sm tracking-wide"
+                href="#">
+                <span class="material-symbols-outlined mr-4" data-icon="settings">settings</span>
+                Configuración
+            </a>
+        </nav>
+        <div class="px-8 mt-auto">
+            <button
+                class="w-full py-3 bg-primary text-on-primary rounded-sm font-label text-xs uppercase tracking-widest hover:opacity-90 transition-opacity">
+                Nueva Cuenta
+            </button>
+        </div>
+    </aside>
+    <!-- Área de Contenido Principal -->
+    <main class="flex-1 ml-64 min-h-screen">
+        <!-- Implementación de Barra Superior -->
+        <header
+            class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 bg-[#faf9f6]/80 dark:bg-stone-950/80 backdrop-blur-md flex items-center justify-between px-10 z-40 shadow-[0_32px_32px_rgba(26,28,26,0.05)]">
+            <div
+                class="flex items-center bg-surface-container-low px-4 py-1.5 rounded-sm w-96 focus-within:ring-1 focus-within:ring-[#775a19]/20 transition-all">
+                <span class="material-symbols-outlined text-secondary text-sm mr-2" data-icon="search">search</span>
+                <input
+                    class="bg-transparent border-none focus:ring-0 text-xs font-body w-full placeholder:text-outline/50"
+                    placeholder="Buscar cuentas, gerentes o IDs..." type="text" />
+            </div>
+            <div class="flex items-center space-x-6">
+                <div class="flex items-center space-x-4">
+                    <span
+                        class="material-symbols-outlined text-secondary cursor-pointer hover:opacity-80 transition-opacity"
+                        data-icon="notifications">notifications</span>
+                    <span
+                        class="material-symbols-outlined text-secondary cursor-pointer hover:opacity-80 transition-opacity"
+                        data-icon="help_outline">help_outline</span>
+                </div>
+                <button
+                    class="bg-primary px-6 py-2 text-on-primary font-['Manrope'] font-semibold text-xs uppercase tracking-widest rounded-sm hover:opacity-90 transition-opacity">
+                    Check-in
+                </button>
+                <div class="h-8 w-8 rounded-full bg-surface-container-highest overflow-hidden">
+                    <img alt="Perfil del Gerente de Cuentas" class="w-full h-full object-cover"
+                        data-alt="professional portrait of a hotel account manager in a tailored charcoal suit with a warm and welcoming expression"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBltA76DRHDlnx1mBdafb6rIJ7hBIpPY-ZCKSlE1Cf1czr__IkBRC6kJMwzHRdaD0TRe5rKo2kvjWr3qOv4UWPdfYC5fWUaw5nCwvyNgvhcwJ73IL9t2GAXLp4uBWMwcnyF8drOYDeIgRaQaFafbsJdH0PbV37Ky4Q2F7QIpfUpPhhjsJUWCoYFQ4cvLVpH1A3kaJmeigCTINcY6khIyYM3LTKlRWFbrWum2Dj7r7enISKDOimDSOcpiro8edD_AnX4F5kZ8A-o7ww" />
+                </div>
+            </div>
+        </header>
+        <div class="pt-24 px-10 pb-12 max-w-7xl mx-auto">
+            <!-- Cuadrícula de Resumen -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div
+                    class="bg-surface-container-lowest p-8 rounded-sm flex flex-col justify-between border-l-4 border-primary">
+                    <div>
+                        <p class="font-label text-[10px] uppercase tracking-[0.2em] text-secondary mb-2">Total de Cuentas Corporativas</p>
+                        <h2 class="font-headline text-4xl text-on-surface">142</h2>
+                    </div>
+                    <div class="mt-4 flex items-center text-xs text-primary font-semibold">
+                        <span class="material-symbols-outlined text-sm mr-1" data-icon="trending_up">trending_up</span>
+                        +12% respecto al trimestre anterior
+                    </div>
+                </div>
+                <div class="bg-surface-container-lowest p-8 rounded-sm flex flex-col justify-between">
+                    <div>
+                        <p class="font-label text-[10px] uppercase tracking-[0.2em] text-secondary mb-2">Contratos Activos</p>
+                        <h2 class="font-headline text-4xl text-on-surface">89</h2>
+                    </div>
+                    <div class="mt-4 flex items-center text-xs text-secondary/60">
+                        8 renovaciones pendientes este mes
+                    </div>
+                </div>
+                <div class="bg-surface-container-lowest p-8 rounded-sm flex flex-col justify-between">
+                    <div>
+                        <p class="font-label text-[10px] uppercase tracking-[0.2em] text-secondary mb-2">Ingresos Corporativos Mensuales</p>
+                        <h2 class="font-headline text-4xl text-primary">$412,800</h2>
+                    </div>
+                    <div class="mt-4 flex items-center text-xs text-secondary/60">
+                        Objetivo: $450k (91.7%)
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Sección de Lista de Clientes -->
+                <div class="lg:w-2/3">
+                    <div class="flex items-end justify-between mb-8">
+                        <h3 class="font-headline text-2xl">Socios Corporativos</h3>
+                        <p class="font-label text-[10px] uppercase tracking-widest text-secondary">Mostrando 24 de 142 clientes</p>
+                    </div>
+                    <div class="space-y-4">
+                        <!-- Tarjeta de Cliente 1 (Activo) -->
+                        <div
+                            class="group bg-surface-container-low hover:bg-surface-container-lowest p-6 transition-all duration-300 cursor-pointer flex items-center border-b border-outline-variant/10">
+                            <div
+                                class="w-12 h-12 bg-surface-container-highest flex items-center justify-center rounded-sm mr-6 text-primary group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined" data-icon="apartment">apartment</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-headline text-lg mb-0.5">TechCorp Solutions</h4>
+                                <div class="flex items-center space-x-4">
+                                    <span
+                                        class="font-label text-[10px] uppercase tracking-wider text-secondary">Gerente:
+                                        Julian Vance</span>
+                                    <span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+                                    <span
+                                        class="font-label text-[10px] uppercase tracking-wider text-primary font-bold">20%
+                                        Descuento Promedio</span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span
+                                    class="bg-primary/10 text-primary px-3 py-1 rounded-full font-label text-[10px] font-bold uppercase tracking-widest">Abierta</span>
+                            </div>
+                        </div>
+                        <!-- Tarjeta de Cliente 2 (Activo) -->
+                        <div
+                            class="group bg-surface-container-low hover:bg-surface-container-lowest p-6 transition-all duration-300 cursor-pointer flex items-center border-b border-outline-variant/10">
+                            <div
+                                class="w-12 h-12 bg-surface-container-highest flex items-center justify-center rounded-sm mr-6 text-primary group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-headline text-lg mb-0.5">Global Logistics Inc.</h4>
+                                <div class="flex items-center space-x-4">
+                                    <span
+                                        class="font-label text-[10px] uppercase tracking-wider text-secondary">Gerente:
+                                        Sarah Chen</span>
+                                    <span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+                                    <span
+                                        class="font-label text-[10px] uppercase tracking-wider text-primary font-bold">15%
+                                        Descuento Promedio</span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span
+                                    class="bg-primary/10 text-primary px-3 py-1 rounded-full font-label text-[10px] font-bold uppercase tracking-widest">Abierta</span>
+                            </div>
+                        </div>
+                        <!-- Tarjeta de Cliente 3 (Cerrada) -->
+                        <div
+                            class="group bg-surface-container-low hover:bg-surface-container-lowest p-6 transition-all duration-300 cursor-pointer flex items-center border-b border-outline-variant/10">
+                            <div
+                                class="w-12 h-12 bg-surface-container-highest flex items-center justify-center rounded-sm mr-6 text-secondary/40 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined" data-icon="palette">palette</span>
+                            </div>
+                            <div class="flex-1 opacity-60">
+                                <h4 class="font-headline text-lg mb-0.5">Design Studio Collective</h4>
+                                <div class="flex items-center space-x-4">
+                                    <span
+                                        class="font-label text-[10px] uppercase tracking-wider text-secondary">Gerente:
+                                        Marcus Thorne</span>
+                                    <span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+                                    <span class="font-label text-[10px] uppercase tracking-wider text-secondary">10%
+                                        Descuento Promedio</span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span
+                                    class="bg-secondary-container text-secondary px-3 py-1 rounded-full font-label text-[10px] font-bold uppercase tracking-widest">Cerrada</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Panel de Detalles de Cuenta (Vista "Modal") -->
+                <div class="lg:w-1/3">
+                    <div
+                        class="sticky top-24 bg-surface-container-lowest rounded-sm overflow-hidden shadow-[0_32px_64px_rgba(26,28,26,0.08)]">
+                        <div class="h-48 relative overflow-hidden">
+                            <img alt="Vista de Oficina Corporativa" class="w-full h-full object-cover"
+                                data-alt="minimalist architectural shot of a modern glass skyscraper reflecting a clear blue sky at dusk with sophisticated interior lighting"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD6-nf7cIgvwWV040MCu6gBcM6iTjnNW_XAMcKVikBJZrvImp508FAwjkt8gd7Hpc6FH-vysKaeEL3mVaAAvKQnd_Pkr0-xpnW3wY4j9D1miQYHSe-FbdktIegviZ9BfCzXHIfBv17OfoZuHYmM6HOedI83R6_ac49ENAYmM576XmSEZbFggN5ptYjKXZGX4LBa59y5N_zrionm00VRLcTVYkS-BlM-z8lCm_UWf6aMkl4sCXbvSuDFiOwp1aZc2Tcwz6SggedibY" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent">
+                            </div>
+                        </div>
+                        <div class="p-8 -mt-12 relative z-10">
+                            <div class="flex items-center justify-between mb-6">
+                                <div>
+                                    <h2 class="font-headline text-3xl mb-1">TechCorp Solutions</h2>
+                                    <p class="font-body text-secondary text-sm">Sede Norteamericana</p>
+                                </div>
+                                <div
+                                    class="w-12 h-12 bg-surface-container-low border border-outline-variant/20 flex items-center justify-center rounded-sm">
+                                    <span class="material-symbols-outlined text-primary"
+                                        data-icon="verified">verified</span>
+                                </div>
+                            </div>
+                            <div class="space-y-6 mb-10">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <p class="font-label text-[10px] uppercase tracking-widest text-secondary mb-1">
+                                            Estado del Contrato</p>
+                                        <p class="font-body text-sm font-bold text-on-surface">Premium Activo</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-label text-[10px] uppercase tracking-widest text-secondary mb-1">
+                                            Fecha de Renovación</p>
+                                        <p class="font-body text-sm font-bold text-on-surface">24 Oct, 2024</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-label text-[10px] uppercase tracking-widest text-secondary mb-3">Descuentos por Tipo de Habitación</p>
+                                    <div class="space-y-3">
+                                        <div
+                                            class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+                                            <span class="font-body text-xs text-on-surface">King Estándar</span>
+                                            <span class="font-headline italic text-primary">15%</span>
+                                        </div>
+                                        <div
+                                            class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+                                            <span class="font-body text-xs text-on-surface">Ejecutivo Deluxe</span>
+                                            <span class="font-headline italic text-primary">20%</span>
+                                        </div>
+                                        <div
+                                            class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+                                            <span class="font-body text-xs text-on-surface">Suite Presidencial</span>
+                                            <span class="font-headline italic text-primary">25%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <button
+                                    class="py-3 bg-primary text-on-primary font-label text-[10px] uppercase tracking-widest rounded-sm hover:opacity-90 transition-opacity">
+                                    Aplicar Descuento
+                                </button>
+                                <button
+                                    class="py-3 border border-outline-variant text-secondary font-label text-[10px] uppercase tracking-widest rounded-sm hover:bg-surface-container-low transition-colors">
+                                    Nuevo Contrato
+                                </button>
+                                <button
+                                    class="py-3 bg-secondary text-on-secondary font-label text-[10px] uppercase tracking-widest rounded-sm col-span-2 hover:opacity-90 transition-opacity">
+                                    Cerrar Cuenta
+                                </button>
+                            </div>
+                            <div
+                                class="mt-8 pt-6 border-t border-outline-variant/10 flex items-center justify-between text-secondary">
+                                <div class="flex items-center space-x-2">
+                                    <span class="material-symbols-outlined text-sm" data-icon="mail">mail</span>
+                                    <span class="font-body text-[10px]">billing@techcorp.io</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="material-symbols-outlined text-sm" data-icon="call">call</span>
+                                    <span class="font-body text-[10px]">+1 (888) 555-0129</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Elemento Estético de Mampostería Inferior -->
+            <div class="mt-24 grid grid-cols-12 gap-6 h-[400px]">
+                <div class="col-span-8 h-full relative group overflow-hidden">
+                    <img alt="Vestíbulo de Hotel de Lujo"
+                        class="w-full h-full object-cover rounded-sm grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
+                        data-alt="ultra-modern luxury hotel lobby with minimalist furniture, high ceilings, and warm golden light filtering through architectural fins"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAazw7cP_8vHJLIyRT-elIUrc2SmS7lae9Z-CHuokIZxSGjmtTcUNeoW7sCDIZ92YarAYmyL_5kx0rkNPIqTVV8yHyNK7AsKAF7KrVGfNdcrvLbwhF5yKY5Zgle0WM0ghRUNvr286SWuk9asQH5jzKUEDix7nsrBVj2NfNOaYoc079oQU_pe6ScB9JG1YjTmbRfkZq-MOJa8T4UCzhRsGTZP3tf2dtxpX_jE-tSrIqa_M6sUf9bsBvKOXdc3osC1ZcW2Pm65t8bzzM" />
+                    <div class="absolute bottom-8 left-8 text-white">
+                        <p class="font-label text-[10px] uppercase tracking-[0.3em] mb-2 opacity-80">Integridad del Diseño
+                        </p>
+                        <h4 class="font-headline text-3xl">Cuidando la Experiencia Empresarial</h4>
+                    </div>
+                </div>
+                <div class="col-span-4 h-full flex flex-col gap-6">
+                    <div class="flex-1 relative group overflow-hidden">
+                        <img alt="Detalle de Sala de Reuniones" class="w-full h-full object-cover rounded-sm"
+                            data-alt="close-up of a high-end corporate meeting room with walnut wood table, premium leather chairs, and a minimalist brass centerpiece"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe9Bh-FyOF0iCSojgDR0yIMXf2G-4TOiobdrK7gZrxjf_NVy55QHtPeu6BRkYMNWS1JteO3uyYUULFeedNg8gD1KsE3jCQBRfR1p8wt43nS6QFj3zaQlBaH3YYvAup15Bqziw64HuDnic9G0fQ0Rp_G6dCi5Iyah2zbJGBe812krdfW8nV5f9WTm-8D15rK2a6_woaTdaIIhRfc2q689KgRwpcjOSvOPV7O2nS4GIYQl01mkSZjvzoPShi47LnwOPfUYtE-io89dM" />
+                    </div>
+                    <div
+                        class="h-1/3 bg-primary-container/20 flex items-center justify-center p-8 rounded-sm text-center">
+                        <p class="font-headline italic text-lg text-primary">"La verdadera hospitalidad se encuentra en la ausencia de fricción."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

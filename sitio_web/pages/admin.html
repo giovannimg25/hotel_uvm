@@ -1,1 +1,431 @@
 
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Holiday Estate | Consola de Administración</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-primary-fixed-variant": "#5d4201",
+            "on-secondary-fixed-variant": "#474747",
+            "background": "#faf9f6",
+            "secondary-fixed": "#e4e2e1",
+            "surface": "#faf9f6",
+            "outline-variant": "#d1c5b4",
+            "on-tertiary-container": "#3e3b35",
+            "outline": "#7f7667",
+            "on-error": "#ffffff",
+            "surface-variant": "#e3e2e0",
+            "surface-container-low": "#f4f3f1",
+            "tertiary-fixed-dim": "#cbc6bd",
+            "surface-container": "#efeeeb",
+            "on-tertiary-fixed": "#1d1b16",
+            "tertiary": "#615e57",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#e8e2d9",
+            "primary-container": "#c5a059",
+            "on-primary": "#ffffff",
+            "error": "#ba1a1a",
+            "surface-tint": "#775a19",
+            "on-primary-container": "#4e3700",
+            "on-surface": "#1a1c1a",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-container": "#656464",
+            "on-background": "#1a1c1a",
+            "secondary-fixed-dim": "#c8c6c5",
+            "on-surface-variant": "#4e4639",
+            "on-primary-fixed": "#261900",
+            "on-error-container": "#93000a",
+            "surface-dim": "#dbdad7",
+            "primary-fixed": "#ffdea5",
+            "surface-container-highest": "#e3e2e0",
+            "primary": "#775a19",
+            "inverse-on-surface": "#f2f1ee",
+            "surface-container-high": "#e9e8e5",
+            "inverse-surface": "#2f312f",
+            "primary-fixed-dim": "#e9c176",
+            "secondary-container": "#e4e2e1",
+            "on-secondary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#1b1c1c",
+            "secondary": "#5f5e5e",
+            "surface-bright": "#faf9f6",
+            "tertiary-container": "#aaa59d",
+            "on-tertiary-fixed-variant": "#494640",
+            "inverse-primary": "#e9c176"
+          },
+          fontFamily: {
+            "headline": ["Noto Serif"],
+            "body": ["Manrope"],
+            "label": ["Manrope"]
+          },
+          borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    .serif-font {
+      font-family: 'Noto Serif', serif;
+    }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface flex min-h-screen">
+  <!-- Barra Lateral de Navegación -->
+  <aside
+    class="h-screen w-64 fixed left-0 top-0 border-r border-neutral-200/10 bg-[#f4f3f1] dark:bg-neutral-900 flex flex-col p-6 space-y-8 z-50">
+    <div class="flex items-center space-x-3 mb-4">
+      <div class="w-10 h-10 bg-primary-container flex items-center justify-center rounded-sm">
+        <span class="material-symbols-outlined text-on-primary-container" data-icon="castle">castle</span>
+      </div>
+      <div>
+        <h1 class="font-serif text-[#775a19] text-lg leading-tight">Holiday Estate</h1>
+        <p class="font-['Manrope'] uppercase tracking-[0.05rem] text-[10px] font-semibold text-secondary">Consola de Administración</p>
+      </div>
+    </div>
+    <nav class="flex-1 space-y-1">
+      <!-- Panel (Activo) -->
+      <a class="flex items-center space-x-3 px-4 py-3 text-[#775a19] bg-[#ffffff] rounded-sm transition-all duration-200 group"
+        href="#">
+        <span class="material-symbols-outlined transition-transform group-hover:translate-x-1" data-icon="dashboard"
+          style="font-variation-settings: 'FILL' 1;">dashboard</span>
+        <span class="font-['Manrope'] uppercase tracking-[0.05rem] text-[10px] font-semibold">Panel</span>
+      </a>
+      <!-- Habitaciones -->
+      <a class="flex items-center space-x-3 px-4 py-3 text-[#5f5e5e] hover:text-[#775a19] hover:bg-[#faf9f6] transition-all duration-200 group"
+        href="#">
+        <span class="material-symbols-outlined transition-transform group-hover:translate-x-1"
+          data-icon="bed">bed</span>
+        <span class="font-['Manrope'] uppercase tracking-[0.05rem] text-[10px] font-semibold">Habitaciones</span>
+      </a>
+      <!-- Reservas -->
+      <a class="flex items-center space-x-3 px-4 py-3 text-[#5f5e5e] hover:text-[#775a19] hover:bg-[#faf9f6] transition-all duration-200 group"
+        href="#">
+        <span class="material-symbols-outlined transition-transform group-hover:translate-x-1"
+          data-icon="calendar_today">calendar_today</span>
+        <span class="font-['Manrope'] uppercase tracking-[0.05rem] text-[10px] font-semibold">Reservas</span>
+      </a>
+      <!-- Huéspedes -->
+      <a class="flex items-center space-x-3 px-4 py-3 text-[#5f5e5e] hover:text-[#775a19] hover:bg-[#faf9f6] transition-all duration-200 group"
+        href="#">
+        <span class="material-symbols-outlined transition-transform group-hover:translate-x-1"
+          data-icon="group">group</span>
+        <span class="font-['Manrope'] uppercase tracking-[0.05rem] text-[10px] font-semibold">Huéspedes</span>
+      </a>
+      <!-- Usuarios del Sistema -->
+      <a class="flex items-center space-x-3 px-4 py-3 text-[#5f5e5e] hover:text-[#775a19] hover:bg-[#faf9f6] transition-all duration-200 group"
+        href="#">
+        <span class="material-symbols-outlined transition-transform group-hover:translate-x-1"
+          data-icon="manage_accounts">manage_accounts</span>
+        <span class="font-['Manrope'] uppercase tracking-[0.05rem] text-[10px] font-semibold">Usuarios del Sistema</span>
+      </a>
+      <!-- Reportes -->
+      <a class="flex items-center space-x-3 px-4 py-3 text-[#5f5e5e] hover:text-[#775a19] hover:bg-[#faf9f6] transition-all duration-200 group"
+        href="#">
+        <span class="material-symbols-outlined transition-transform group-hover:translate-x-1"
+          data-icon="analytics">analytics</span>
+        <span class="font-['Manrope'] uppercase tracking-[0.05rem] text-[10px] font-semibold">Reportes</span>
+      </a>
+    </nav>
+    <div class="pt-6 border-t border-outline-variant/20 space-y-1">
+      <button
+        class="w-full bg-primary text-on-primary py-3 px-4 rounded-sm font-['Manrope'] uppercase tracking-[0.05rem] text-[10px] font-bold active:scale-95 transition-transform mb-6">
+        Nueva Reserva
+      </button>
+      <a class="flex items-center space-x-3 px-4 py-2 text-[#5f5e5e] hover:text-[#775a19] transition-colors" href="#">
+        <span class="material-symbols-outlined text-sm" data-icon="help">help</span>
+        <span class="font-['Manrope'] uppercase tracking-[0.05rem] text-[10px] font-semibold">Centro de Ayuda</span>
+      </a>
+      <a class="flex items-center space-x-3 px-4 py-2 text-[#5f5e5e] hover:text-error transition-colors" href="#">
+        <span class="material-symbols-outlined text-sm" data-icon="logout">logout</span>
+        <span class="font-['Manrope'] uppercase tracking-[0.05rem] text-[10px] font-semibold">Cerrar Sesión</span>
+      </a>
+    </div>
+  </aside>
+  <main class="ml-64 flex-1 flex flex-col">
+    <!-- Barra de Navegación Superior -->
+    <header
+      class="sticky top-0 w-full z-40 bg-[#faf9f6]/80 dark:bg-neutral-900/80 backdrop-blur-md flex justify-between items-center px-8 py-4 w-full border-b border-neutral-200/20 shadow-[0_32px_32px_rgba(26,28,26,0.05)]">
+      <div class="flex items-center gap-6">
+        <div class="relative group">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+          </span>
+          <input
+            class="bg-surface-container-high border-none rounded-sm py-2 pl-10 pr-4 text-sm w-80 focus:ring-1 focus:ring-primary/30 transition-all font-body"
+            placeholder="Buscar huéspedes, habitaciones o transacciones..." type="text" />
+        </div>
+      </div>
+      <div class="flex items-center space-x-6">
+        <div class="flex items-center space-x-4">
+          <button
+            class="relative text-on-surface-variant hover:text-primary transition-colors active:scale-95 duration-300">
+            <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+            <span class="absolute top-0 right-0 block h-2 w-2 rounded-full bg-primary ring-2 ring-surface"></span>
+          </button>
+          <button class="text-on-surface-variant hover:text-primary transition-colors active:scale-95 duration-300">
+            <span class="material-symbols-outlined" data-icon="settings">settings</span>
+          </button>
+        </div>
+        <div class="h-8 w-[1px] bg-outline-variant/30"></div>
+        <div class="flex items-center space-x-3">
+          <div class="text-right hidden sm:block">
+            <p class="text-[11px] font-bold text-on-surface uppercase tracking-wider font-label">Giovanni Melo</p>
+            <p class="text-[9px] text-secondary uppercase font-label">Gerente de la Finca</p>
+          </div>
+          <img alt="Perfil del Administrador del Sistema" class="h-10 w-10 rounded-full object-cover ring-1 ring-primary/20"
+            data-alt="Close up portrait of a professional man in a bespoke suit with a neutral sophisticated background and soft cinematic lighting"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXBz7zt5rpnJYajlwcpeBxjtp6WoLQk6ki7jiVyAPBljXA7HRjIg3fTpW-oHsdnTaL3L_7Yo8oSAXf_G52VbjDDUlr4y1vSxCIuJN2V9bZR19Q-4Q4w4YPPuFn5Me2IJ00CgFxfN8jMapo6OPCqcTz2vp6RThUL337L4BnqXngjWHhGtoBphmuBAyMPeaBu9Stz38ASxrO6LeRVa_v49ULkZyw3MxywYqMNO0HovdhpQcKSbt0NHLIcfWzmvniZ6nEh7cpPKP5fR4" />
+        </div>
+      </div>
+    </header>
+    <!-- Lienzo de Contenido -->
+    <div class="p-10 max-w-[1400px] w-full mx-auto space-y-12">
+      <!-- Sección Editorial del Encabezado -->
+      <section class="flex flex-col md:flex-row justify-between items-end gap-6">
+        <div class="space-y-2">
+          <p class="font-['Manrope'] uppercase tracking-[0.2rem] text-xs text-primary font-bold">Resumen de Rendimiento
+          </p>
+          <h2 class="text-5xl font-['Noto_Serif'] font-light text-on-surface tracking-tight">Buenos días, Giovanni.</h2>
+          <p class="text-secondary max-w-md font-body leading-relaxed">La finca opera actualmente al <span
+              class="text-on-surface font-semibold">94% de capacidad</span> para el evento de gala del fin de semana.</p>
+        </div>
+        <div class="flex gap-4">
+          <button
+            class="px-6 py-2 border border-outline-variant text-on-surface-variant text-[11px] uppercase font-bold tracking-widest hover:bg-surface-container-low transition-colors rounded-sm">Descargar
+            Reporte PDF</button>
+          <button
+            class="px-6 py-2 bg-primary text-on-primary text-[11px] uppercase font-bold tracking-widest hover:shadow-lg active:scale-95 transition-all rounded-sm">Ver
+            Mapa en Tiempo Real</button>
+        </div>
+      </section>
+      <!-- Cuadrícula de Métricas -->
+      <section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <!-- Tarjeta de Ocupación -->
+        <div
+          class="bg-surface-container-lowest p-8 flex flex-col justify-between border-l-4 border-primary shadow-[0_32px_32px_rgba(26,28,26,0.02)] h-48">
+          <div class="flex justify-between items-start">
+            <p class="font-label text-[10px] uppercase tracking-widest text-secondary font-bold">Tasa de Ocupación</p>
+            <span class="material-symbols-outlined text-primary" data-icon="pie_chart">pie_chart</span>
+          </div>
+          <div>
+            <h3 class="text-4xl font-headline">94.2%</h3>
+            <p class="text-[10px] text-primary font-bold mt-1 uppercase">+4.1% vs semana pasada</p>
+          </div>
+        </div>
+        <!-- Tarjeta de Ingresos -->
+        <div
+          class="bg-surface-container-lowest p-8 flex flex-col justify-between shadow-[0_32px_32px_rgba(26,28,26,0.02)] h-48">
+          <div class="flex justify-between items-start">
+            <p class="font-label text-[10px] uppercase tracking-widest text-secondary font-bold">Ingresos Mensuales</p>
+            <span class="material-symbols-outlined text-secondary" data-icon="payments">payments</span>
+          </div>
+          <div>
+            <h3 class="text-4xl font-headline text-secondary">$842k</h3>
+            <div class="w-full bg-surface-container-high h-1 mt-3 rounded-full overflow-hidden">
+              <div class="bg-primary h-full w-[82%]"></div>
+            </div>
+            <p class="text-[10px] text-secondary mt-1 uppercase">82% de la Meta Mensual ($1M)</p>
+          </div>
+        </div>
+        <!-- Tarjeta de Huéspedes -->
+        <div
+          class="bg-surface-container-lowest p-8 flex flex-col justify-between shadow-[0_32px_32px_rgba(26,28,26,0.02)] h-48">
+          <div class="flex justify-between items-start">
+            <p class="font-label text-[10px] uppercase tracking-widest text-secondary font-bold">Llegadas VIP Hoy</p>
+            <span class="material-symbols-outlined text-secondary" data-icon="star"
+              style="font-variation-settings: 'FILL' 1;">star</span>
+          </div>
+          <div>
+            <h3 class="text-4xl font-headline">12</h3>
+            <div class="flex -space-x-2 mt-2">
+              <img alt="Huésped VIP 1" class="h-6 w-6 rounded-full ring-2 ring-surface"
+                data-alt="Close up of a gentleman with short beard looking ahead with a focused expression and natural warm indoor lighting"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2dxYbZJEluZLXAtoNm3W-s73BAi0nsMxPToStAMFvSZx_6x1-GV9HJDt_rhSua9KL9F78vXt0R7rHCL14qE3SZmAy_3ECSttK1V4Dv_QHZfaavhmJiNvr7HYpkBwsX-PJ0YGsE8PngUx1h_kfhZAEm65DQViPrNhkuKtBvxSVKDwv06dTDdLIkp-8JL7TTh8VvZ8QqKzONNJQZMblSbBGnDhgu4nG5N3CIdu-h6v0szMnPb-B1iabjS8eIb79LbjnCPdKuFvGfhY" />
+              <img alt="Huésped VIP 2" class="h-6 w-6 rounded-full ring-2 ring-surface"
+                data-alt="Portrait of a sophisticated woman with thoughtful expression in soft minimalist lighting"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbQ6SvkPzmTbORNo-eEn3Ms8IfO8yiJhKiHPR3Yb0NYH7T4ZP--EkOVIaVucyoIfsPbulXGcYj4qK-48aoH4R6QlPVhAhTCgTAtqgzZVChWTU8jO0K-QcLeaLfHHNDdIsGZLL8rUoVbn8llA8C6oeVm1zyyWwTltH9yOAt3F_-IJJt7m7F0ySBDMRl9R5h8TfGPJMSOMVCqgIaNlbD2l_9CUnWxZroUYEE6inBTmXIj1Wef-ehYBnO1T6ZmdYGbobEfR0Cf8TdJms" />
+              <img alt="Huésped VIP 3" class="h-6 w-6 rounded-full ring-2 ring-surface"
+                data-alt="Close up portrait of a young man with glasses and artistic professional aesthetic"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyHJ8WFIqczKHuFIVK2_yOX4Kpxf_xyrJ9eChY1P929boyWvygkXxrjU17uaBgHzUJ64CRYzHv4ic1M23ByNG4K2W331QpTLvAA54wQ2Jyl3WOMkIM12aFr_s1s7Vn5SAB-3zg1CKnpDXHe8jKw9ezWhsgtZvqYxN9n9rTJ80_rEsvQMefupAGvwVLIfwP4HLDYusrLbWlUo3qVFHL6oMbFiZmi2Z8qZnKvgSt4ldzXM6gPdAikYFkQrqAn0C3KnbIfGWc757EPI0" />
+              <div
+                class="h-6 w-6 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center text-[8px] font-bold">
+                +9</div>
+            </div>
+          </div>
+        </div>
+        <!-- Tarjeta de Salud -->
+        <div
+          class="bg-surface-container-lowest p-8 flex flex-col justify-between shadow-[0_32px_32px_rgba(26,28,26,0.02)] h-48">
+          <div class="flex justify-between items-start">
+            <p class="font-label text-[10px] uppercase tracking-widest text-secondary font-bold">Salud del Sistema</p>
+            <span class="material-symbols-outlined text-[#2d6a4f]" data-icon="bolt">bolt</span>
+          </div>
+          <div>
+            <h3 class="text-4xl font-headline">Óptimo</h3>
+            <p class="text-[10px] text-secondary mt-1 uppercase">Todos los servicios operativos • 24ms de latencia</p>
+          </div>
+        </div>
+      </section>
+      <!-- Cuadrícula Principal de Información -->
+      <section class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <!-- Registro de Actividades -->
+        <div class="lg:col-span-2 space-y-8">
+          <div class="flex items-center justify-between border-b border-outline-variant/20 pb-4">
+            <h3 class="text-2xl font-headline">Actividad Reciente</h3>
+            <button class="text-primary text-[10px] uppercase font-bold tracking-widest flex items-center">
+              Ver Todo el Historial <span class="material-symbols-outlined text-xs ml-1"
+                data-icon="chevron_right">chevron_right</span>
+            </button>
+          </div>
+          <div class="space-y-6">
+            <!-- Elemento de Actividad 1 -->
+            <div class="flex gap-6 group">
+              <div class="relative">
+                <div class="h-10 w-10 rounded-sm bg-surface-container-high flex items-center justify-center">
+                  <span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+                </div>
+                <div class="absolute top-10 bottom-[-24px] left-1/2 w-[1px] bg-outline-variant/30"></div>
+              </div>
+              <div class="flex-1 pb-6">
+                <div class="flex justify-between items-start">
+                  <h4 class="text-sm font-bold text-on-surface">Check-in en el Penthouse de Lujo</h4>
+                  <span class="text-[10px] text-secondary font-body">hace 12 minutos</span>
+                </div>
+                <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">El huésped <span
+                    class="text-on-surface font-semibold">Lord Sterling</span> ha realizado el check-in en la Habitación 402.
+                  Servicios de valet notificados.</p>
+              </div>
+            </div>
+            <!-- Elemento de Actividad 2 -->
+            <div class="flex gap-6 group">
+              <div class="relative">
+                <div class="h-10 w-10 rounded-sm bg-surface-container-high flex items-center justify-center">
+                  <span class="material-symbols-outlined text-secondary" data-icon="shopping_bag">shopping_bag</span>
+                </div>
+                <div class="absolute top-10 bottom-[-24px] left-1/2 w-[1px] bg-outline-variant/30"></div>
+              </div>
+              <div class="flex-1 pb-6">
+                <div class="flex justify-between items-start">
+                  <h4 class="text-sm font-bold text-on-surface">Nueva Solicitud de Conserjería</h4>
+                  <span class="text-[10px] text-secondary font-body">hace 45 minutos</span>
+                </div>
+                <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Solicitud de traslado en helicóptero privado
+                  para el <span class="text-on-surface font-semibold">Grupo VIP: Alpha</span> programado para mañana a las
+                  09:00.</p>
+              </div>
+            </div>
+            <!-- Elemento de Actividad 3 -->
+            <div class="flex gap-6 group">
+              <div class="relative">
+                <div class="h-10 w-10 rounded-sm bg-surface-container-high flex items-center justify-center">
+                  <span class="material-symbols-outlined text-primary" data-icon="auto_awesome">auto_awesome</span>
+                </div>
+              </div>
+              <div class="flex-1">
+                <div class="flex justify-between items-start">
+                  <h4 class="text-sm font-bold text-on-surface">Mantenimiento Completado</h4>
+                  <span class="text-[10px] text-secondary font-body">hace 2 horas</span>
+                </div>
+                <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Actualización del sistema de filtración del ala del spa
+                  completada. Eficiencia energética aumentada en un 14%.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Columna de Reportes de Alto Nivel -->
+        <div class="space-y-8">
+          <h3 class="text-2xl font-headline border-b border-outline-variant/20 pb-4">Estado de la Finca</h3>
+          <div class="bg-surface-container-low p-8 space-y-6">
+            <div class="space-y-4">
+              <div class="flex justify-between items-end">
+                <p class="text-[10px] uppercase tracking-widest text-secondary font-bold">Inventario de Habitaciones</p>
+                <p class="text-xs text-on-surface font-bold">184 / 200</p>
+              </div>
+              <div class="w-full bg-surface-container-highest h-[2px] rounded-full">
+                <div class="bg-primary h-full w-[92%]"></div>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="flex justify-between items-end">
+                <p class="text-[10px] uppercase tracking-widest text-secondary font-bold">Estado de Limpieza</p>
+                <p class="text-xs text-on-surface font-bold">12 Pendientes</p>
+              </div>
+              <div class="w-full bg-surface-container-highest h-[2px] rounded-full">
+                <div class="bg-secondary h-full w-[15%]"></div>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="flex justify-between items-end">
+                <p class="text-[10px] uppercase tracking-widest text-secondary font-bold">Utilización de Energía</p>
+                <p class="text-xs text-on-surface font-bold">72% Eficiente</p>
+              </div>
+              <div class="w-full bg-surface-container-highest h-[2px] rounded-full">
+                <div class="bg-primary h-full w-[72%]"></div>
+              </div>
+            </div>
+            <div class="pt-6 border-t border-outline-variant/20">
+              <div class="flex items-center space-x-4">
+                <div class="h-12 w-12 flex-shrink-0">
+                  <img alt="Vista previa de la habitación" class="h-full w-full object-cover rounded-sm"
+                    data-alt="Luxurious hotel suite with neutral cream interiors, soft morning sunlight through sheer curtains, and high-end mahogany furniture"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdGVzgQmga-R4zlrCXeh0ugva_LzqkHgW4pbG90KFbLr7r12dNrvaExgXe2aezcZKvrZqEAojUWcXssMlUZgJ-ZG4Uvz-wcmFmAYYxZLorBB-kfT4KYRkQAkUOEWi6CMtefzW3KrziZVaGvCUqJfB9TPR-uogR_xiPHWIRifo8YK6CeYILjVAxSCdscgpNKC7Gx0BpP2vq5ESqcnGelFNLrGCy_8RB63PF_mw986ATrnoSTa3XHM34iPPuE121P5cOB1wdjjkcYW0" />
+                </div>
+                <div>
+                  <p class="text-[10px] uppercase tracking-widest text-primary font-bold">Próxima Suite Disponible</p>
+                  <p class="text-xs font-headline">Pabellón Jardín #104</p>
+                  <p class="text-[10px] text-secondary italic">Lista en 45m</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Tarjeta de Métrica Promocional Pequeña -->
+          <div class="relative overflow-hidden bg-on-surface p-8 text-surface">
+            <div class="absolute top-0 right-0 p-4 opacity-10">
+              <span class="material-symbols-outlined text-8xl" data-icon="trophy">trophy</span>
+            </div>
+            <p class="font-label text-[10px] uppercase tracking-widest text-primary-fixed-dim font-bold mb-2">Satisfacción
+              del Huésped</p>
+            <h4 class="text-3xl font-headline mb-4">4.98 / 5.0</h4>
+            <p class="text-xs text-surface-variant leading-relaxed mb-6">Máximo histórico. Felicitaciones al equipo de relaciones
+              con los huéspedes por un período perfecto de 48 horas.</p>
+            <button
+              class="text-primary-fixed text-[10px] uppercase font-bold tracking-widest border-b border-primary-fixed pb-1">Revisar
+              Comentarios</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+
+</html>

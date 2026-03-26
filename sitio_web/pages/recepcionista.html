@@ -1,1 +1,376 @@
 
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+   <title>Panel Reservas | Holiday Estate</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#ffdea5",
+            "outline": "#7f7667",
+            "on-surface-variant": "#4e4639",
+            "error": "#ba1a1a",
+            "surface-variant": "#e3e2e0",
+            "on-background": "#1a1c1a",
+            "on-tertiary-fixed": "#1d1b16",
+            "surface-container-low": "#f4f3f1",
+            "secondary-fixed": "#e4e2e1",
+            "on-primary-fixed-variant": "#5d4201",
+            "surface-container-lowest": "#ffffff",
+            "background": "#faf9f6",
+            "on-secondary": "#ffffff",
+            "inverse-on-surface": "#f2f1ee",
+            "on-primary-container": "#4e3700",
+            "surface-container": "#efeeeb",
+            "outline-variant": "#d1c5b4",
+            "surface-tint": "#775a19",
+            "inverse-surface": "#2f312f",
+            "secondary": "#5f5e5e",
+            "on-error-container": "#93000a",
+            "on-primary-fixed": "#261900",
+            "on-tertiary-fixed-variant": "#494640",
+            "on-tertiary": "#ffffff",
+            "secondary-container": "#e4e2e1",
+            "on-secondary-fixed-variant": "#474747",
+            "surface-container-high": "#e9e8e5",
+            "on-surface": "#1a1c1a",
+            "on-tertiary-container": "#3e3b35",
+            "tertiary-fixed-dim": "#cbc6bd",
+            "primary-container": "#c5a059",
+            "surface": "#faf9f6",
+            "surface-bright": "#faf9f6",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#1b1c1c",
+            "tertiary-fixed": "#e8e2d9",
+            "tertiary": "#615e57",
+            "on-secondary-container": "#656464",
+            "primary-fixed-dim": "#e9c176",
+            "primary": "#775a19",
+            "surface-dim": "#dbdad7",
+            "tertiary-container": "#aaa59d",
+            "surface-container-highest": "#e3e2e0",
+            "secondary-fixed-dim": "#c8c6c5",
+            "on-primary": "#ffffff",
+            "inverse-primary": "#e9c176",
+            "error-container": "#ffdad6"
+          },
+          fontFamily: {
+            "headline": ["Noto Serif"],
+            "body": ["Manrope"],
+            "label": ["Manrope"]
+          },
+          borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background-color: #faf9f6;
+      color: #1a1c1a;
+    }
+
+    .serif-text {
+      font-family: 'Noto Serif', serif;
+    }
+  </style>
+</head>
+
+<body class="flex overflow-hidden">
+  <!-- Componente de Barra Lateral -->
+  <aside class="flex flex-col h-full py-8 h-screen w-64 border-r-0 bg-[#f4f3f1] dark:bg-stone-900 shrink-0">
+    <div class="px-6 mb-12">
+      <h1 class="font-['Noto_Serif'] italic text-xl text-[#775a19] dark:text-[#C5A059]">El Conserje</h1>
+      <p class="font-['Noto_Serif'] font-medium text-xs tracking-wide text-secondary opacity-60">Gran Plaza</p>
+    </div>
+    <nav class="flex-1 space-y-1">
+      <a class="flex items-center gap-4 py-3 text-[#5f5e5e] dark:text-stone-400 pl-4 hover:text-[#775a19] dark:hover:text-[#C5A059] transition-colors duration-300"
+        href="#">
+        <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+        <span class="font-['Noto_Serif'] font-medium text-sm tracking-wide">Panel</span>
+      </a>
+      <a class="flex items-center gap-4 py-3 text-[#5f5e5e] dark:text-stone-400 pl-4 hover:text-[#775a19] dark:hover:text-[#C5A059] transition-colors duration-300"
+        href="#">
+        <span class="material-symbols-outlined" data-icon="bed">bed</span>
+        <span class="font-['Noto_Serif'] font-medium text-sm tracking-wide">Habitaciones</span>
+      </a>
+      <a class="flex items-center gap-4 py-3 text-[#775a19] dark:text-[#C5A059] font-bold border-l-2 border-[#775a19] dark:border-[#C5A059] pl-4 active:scale-[0.99] duration-200"
+        href="#">
+        <span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+        <span class="font-['Noto_Serif'] font-medium text-sm tracking-wide">Reservas</span>
+      </a>
+      <a class="flex items-center gap-4 py-3 text-[#5f5e5e] dark:text-stone-400 pl-4 hover:text-[#775a19] dark:hover:text-[#C5A059] transition-colors duration-300"
+        href="#">
+        <span class="material-symbols-outlined" data-icon="group">group</span>
+        <span class="font-['Noto_Serif'] font-medium text-sm tracking-wide">Huéspedes</span>
+      </a>
+      <a class="flex items-center gap-4 py-3 text-[#5f5e5e] dark:text-stone-400 pl-4 hover:text-[#775a19] dark:hover:text-[#C5A059] transition-colors duration-300"
+        href="#">
+        <span class="material-symbols-outlined" data-icon="settings">settings</span>
+        <span class="font-['Noto_Serif'] font-medium text-sm tracking-wide">Configuración</span>
+      </a>
+    </nav>
+    <div class="px-6 mt-auto">
+      <button
+        class="w-full py-3 bg-primary text-on-primary font-label text-xs uppercase tracking-widest rounded-sm shadow-sm hover:opacity-90 transition-opacity">
+        Nueva Reserva
+      </button>
+    </div>
+  </aside>
+  <!-- Área de Contenido Principal -->
+  <main class="flex-1 relative h-screen overflow-y-auto bg-surface">
+    <!-- Componente de Barra Superior -->
+    <header
+      class="flex items-center justify-between px-10 w-full fixed top-0 right-0 w-[calc(100%-16rem)] h-16 bg-[#faf9f6]/80 dark:bg-stone-950/80 backdrop-blur-md z-50 shadow-[0_32px_32px_rgba(26,28,26,0.05)]">
+      <div class="flex items-center gap-4 w-1/2">
+        <div class="relative w-full max-w-md group">
+          <span
+            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-sm">search</span>
+          <input
+            class="w-full bg-surface-container-high border-none rounded-sm py-2 pl-10 pr-4 text-xs font-label focus:ring-1 focus:ring-primary/20 placeholder:text-outline/50"
+            placeholder="Buscar reservas o huéspedes..." type="text" />
+        </div>
+      </div>
+      <div class="flex items-center gap-8">
+        <div class="flex items-center gap-6">
+          <span class="material-symbols-outlined text-secondary cursor-pointer hover:opacity-80 transition-opacity"
+            data-icon="notifications">notifications</span>
+          <span class="material-symbols-outlined text-secondary cursor-pointer hover:opacity-80 transition-opacity"
+            data-icon="help_outline">help_outline</span>
+        </div>
+        <button
+          class="font-['Manrope'] font-semibold text-xs uppercase tracking-widest text-primary border-b border-primary/20 pb-0.5 hover:opacity-80">
+          Check-in
+        </button>
+        <div class="h-8 w-8 rounded-full bg-surface-container-highest overflow-hidden">
+          <img alt="Perfil de Recepcionista" class="w-full h-full object-cover"
+            data-alt="professional headshot of a hospitality professional with a warm smile, natural lighting, elegant corporate attire"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI4Wk1jciA-rAEf9fT7oGmzZdTdiTf5jWtOWdQpsXBTSBfjIdcztRDi7fc6GumzHnL9vItelOlWTMXk8jEpR9uZ25TYuTIlTdF3FR6Rjc7J7E0FoZMCv53yTUze9eiHfQuSLw4g-1gZoXg0yOjK-XoAvfILsUZTige0HObqAozNnODficKg6dP-BqevhDSyzxpuQj8vk1AzAcvq7-FOyjUjdh_GGfCAe7S4CLPD8iH6Qwbtn9TkrrKsINDeGNRxscJXX--S6RQVh4" />
+        </div>
+      </div>
+    </header>
+    <div class="pt-24 pb-12 px-10 max-w-7xl mx-auto">
+      <!-- Encabezado de Página -->
+      <div class="mb-12">
+        <p class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-2">Vida Refinada</p>
+        <h2 class="serif-text text-5xl font-light text-on-surface">Suite Real Penthouse</h2>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <!-- Izquierda: Contenido/Hero -->
+        <div class="lg:col-span-8 space-y-12">
+          <!-- Galería Hero Principal -->
+          <div class="grid grid-cols-4 grid-rows-2 gap-4 h-[500px]">
+            <div class="col-span-3 row-span-2 relative rounded-sm overflow-hidden group">
+              <img alt="Vista Principal de la Suite"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                data-alt="luxury hotel suite with floor to ceiling windows overlooking a city skyline at sunset, warm designer lighting, velvet furniture"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD21WJfp4uEWa9TmV1osqnU_z3edhQYdCIPNUC2bSuIqyyxuqCx-G9YyR44gWt7IpPDS4ahraeBgLkTwK06Av90Y_rTdkSyIQUQvHCpa_5ruMFnNjse3qOtE4MsKFr8YHIzfvbmuKlVsWCcUKGg_pO02nhezrCwv6Ic0FRqa9b16SrWuLX4OwjqoDpUpBrd98WHfQsodWjGvWWIqWV3ao1d6VZLMwL9ETThs3EeglCaIEEJcN2bmlqsjkQSYu_OjLm_fM8IEsvRA04" />
+              <div class="absolute bottom-6 left-6 bg-surface/80 backdrop-blur-md px-4 py-2 rounded-sm">
+                <span class="font-label text-[10px] uppercase tracking-widest text-secondary">Selección Principal</span>
+              </div>
+            </div>
+            <div class="col-span-1 row-span-1 rounded-sm overflow-hidden">
+              <img alt="Detalle del Baño" class="w-full h-full object-cover"
+                data-alt="modern luxury bathroom with marble soaking tub, gold fixtures, and soft ambient morning light"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBai3gZAJ-mz-abgcL6GxLa4asNIZfaLFif3emdrb45mbI8TKE47btropPHlUKGQ2ZQu6gfvFpeQ1k8Y1PnZQgfYumm5GjK1QPhK9OWYTI01TC1BlSOwFurFa87S5VYDOrWWPqOUQ3kb0PiuIekiFdDGsvMxqsuN_mHwoblNpF1Xj_sIiKy1pGlxNLpURjEEVVkF-6B3Xf93-JPdCERh6y2E8UIGgXm2vlpB1IOjNVVvUrIkeQzmPn-jlaFJrSXtkbRhuA3KxS_f6w" />
+            </div>
+            <div class="col-span-1 row-span-1 rounded-sm overflow-hidden">
+              <img alt="Detalle del Espacio de Trabajo" class="w-full h-full object-cover"
+                data-alt="elegant dark wood study desk with a view of a garden, minimalist design, high-end desk lamp"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCy6u_52WE1TLt34gDfBw05BRBCIC5ByLf_N64Xx8EBcRClS59-lNLBlEy8WvkjC9qlzSV01TYBINIgSyUKESjpfu4VwHSEH_wsTjB7y021RujWLfcfKIv4YBK_fHpwJQGgFRH4cLlIEJc1w-Su3wp7TUlK9UmEvjNds4jtjhF1Y5bVSt2JrCXlarERwog-Qj-1KoAukDlXEOpwiERMoMkz6Om6v4V1FXBDBOx_Fw32LdJElPiZBgQbenJdpZZhiyFZwYaBQvJyWU" />
+            </div>
+          </div>
+          <!-- Detalles de la Habitación y Servicios -->
+          <div class="grid grid-cols-3 gap-8 pt-6 border-t border-outline-variant/20">
+            <div>
+              <h4 class="font-label text-[10px] uppercase tracking-widest text-secondary mb-4">Capacidad</h4>
+              <p class="serif-text text-xl">4 Huéspedes <span class="text-sm opacity-50 serif-text italic">Máx.</span></p>
+            </div>
+            <div>
+              <h4 class="font-label text-[10px] uppercase tracking-widest text-secondary mb-4">Espacio</h4>
+              <p class="serif-text text-xl">140 m² <span class="text-sm opacity-50 serif-text italic">Área Total</span>
+              </p>
+            </div>
+            <div>
+              <h4 class="font-label text-[10px] uppercase tracking-widest text-secondary mb-4">Ropa de Cama</h4>
+              <p class="serif-text text-xl">King &amp; Twin <span class="text-sm opacity-50 serif-text italic">Ropa Premium</span></p>
+            </div>
+          </div>
+          <!-- Lista de Opciones de Habitaciones Disponibles -->
+          <div class="space-y-6">
+            <h3 class="serif-text text-2xl mb-8">Opciones de Mejora Disponibles</h3>
+            <!-- Tarjeta de Habitación 1 -->
+            <div
+              class="flex gap-6 p-4 bg-surface-container-lowest rounded-sm hover:shadow-[0_32px_32px_rgba(26,28,26,0.05)] transition-shadow">
+              <div class="w-48 h-32 shrink-0 rounded-sm overflow-hidden">
+                <img alt="Suite con Terraza Jardín" class="w-full h-full object-cover"
+                  data-alt="serene hotel room with balcony overlooking a lush manicured garden, morning sunlight filtering through curtains"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYmjqKt6221EWKrl5lvMwyYmxpW1FST1AVg9o5tVMGTxVbHCsShxugSay25rcnKGdRHvmLBIkhS_rrGc9mJMvx_KCWvhM-87JsbnbX0KSjxFxjLGPV3JzZM_W4tSX8Uc2hVk_Ts2Pw4kljPRzqzfiHdYq1j149muZMm65rW4Rnbf3lJYb1qDX4HOIgCIX5sj4qRIUVFBC7EvhwiH0v2vmOJHbUQ0TbXNDfzKsfmwF45w9sJez8xChmpGXsgO7QlX8YCqTukftL0hM" />
+              </div>
+              <div class="flex-1 flex flex-col justify-between py-1">
+                <div>
+                  <div class="flex justify-between items-start">
+                    <h4 class="serif-text text-lg">Suite Terraza Jardín</h4>
+                    <span class="font-label font-bold text-primary">$850<span
+                        class="text-[10px] text-secondary font-normal uppercase ml-1">/ Noche</span></span>
+                  </div>
+                  <p class="text-xs text-secondary mt-1 max-w-md">Asientos exteriores privados con vistas botánicas y
+                    acceso directo al patio de bienestar.</p>
+                </div>
+                <div class="flex gap-4">
+                  <div class="flex items-center gap-1.5 opacity-60">
+                    <span class="material-symbols-outlined text-sm">wifi</span>
+                    <span class="text-[10px] font-label uppercase">Fibra Óptica</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 opacity-60">
+                    <span class="material-symbols-outlined text-sm">local_bar</span>
+                    <span class="text-[10px] font-label uppercase">Bar Privado</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 opacity-60">
+                    <span class="material-symbols-outlined text-sm">spa</span>
+                    <span class="text-[10px] font-label uppercase">Spa en Habitación</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Tarjeta de Habitación 2 -->
+            <div
+              class="flex gap-6 p-4 bg-surface-container-low rounded-sm opacity-80 border border-transparent hover:border-outline-variant/30 transition-all">
+              <div class="w-48 h-32 shrink-0 rounded-sm overflow-hidden">
+                <img alt="Estudio Skyline" class="w-full h-full object-cover"
+                  data-alt="contemporary urban studio room with mood lighting, designer furniture, and dark wood accents"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmEdnZPtOK2jEkzMBSB_nsRFIT6CJyCRFQ_-BVVBDh4k9b16JcrekhDaZbnpru50-0FHnn9UvpXIGYghO8TQd8uy4hfzr3deFkSZHZcAgGbpmQ3nnb96B8xHhK5c1S8d4F288Z7bc7AYU9BX7tDL7IKS1g5rLhXm4IJ6QNTmkVguST93y7zJ5vfDVUMJczFwQOK4dGkqfpHrrNG-GWS9ZHkZxm6XeCRncjS6hV5BsuaXK-sldKFkDrAMoAVDeHQ0KimivXKkn6xac" />
+              </div>
+              <div class="flex-1 flex flex-col justify-between py-1">
+                <div>
+                  <div class="flex justify-between items-start">
+                    <h4 class="serif-text text-lg">Estudio Ejecutivo Skyline</h4>
+                    <span class="font-label font-bold text-primary">$1,200<span
+                        class="text-[10px] text-secondary font-normal uppercase ml-1">/ Noche</span></span>
+                  </div>
+                  <p class="text-xs text-secondary mt-1 max-w-md">Vistas panorámicas de la ciudad con espacio de trabajo
+                    profesional integrado y automatización inteligente.</p>
+                </div>
+                <div class="flex gap-4">
+                  <div class="flex items-center gap-1.5 opacity-60">
+                    <span class="material-symbols-outlined text-sm">room_service</span>
+                    <span class="text-[10px] font-label uppercase">Mayordomo 24/7</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 opacity-60">
+                    <span class="material-symbols-outlined text-sm">ac_unit</span>
+                    <span class="text-[10px] font-label uppercase">Control Climático</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Derecha: Barra Lateral de Reserva -->
+        <aside class="lg:col-span-4 sticky top-24">
+          <div class="bg-surface-container-lowest p-8 rounded-sm shadow-[0_32px_64px_rgba(26,28,26,0.04)]">
+            <h3 class="serif-text text-2xl mb-8">Detalles de la Reserva</h3>
+            <form class="space-y-6">
+              <!-- Rango de Fechas -->
+              <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-2">
+                  <label class="font-label text-[10px] uppercase tracking-widest text-secondary block">Check-in</label>
+                  <div class="bg-surface-container-high rounded-sm px-4 py-3 flex items-center justify-between">
+                    <span class="text-sm font-medium">12 Oct, 2024</span>
+                    <span class="material-symbols-outlined text-sm text-primary">calendar_today</span>
+                  </div>
+                </div>
+                <div class="space-y-2">
+                  <label class="font-label text-[10px] uppercase tracking-widest text-secondary block">Check-out</label>
+                  <div class="bg-surface-container-high rounded-sm px-4 py-3 flex items-center justify-between">
+                    <span class="text-sm font-medium">18 Oct, 2024</span>
+                    <span class="material-symbols-outlined text-sm text-primary">calendar_today</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Selección de Huéspedes -->
+              <div class="space-y-2">
+                <label class="font-label text-[10px] uppercase tracking-widest text-secondary block">Huéspedes</label>
+                <div class="bg-surface-container-high rounded-sm px-4 py-3 flex items-center justify-between">
+                  <span class="text-sm font-medium">2 Adultos, 1 Niño</span>
+                  <span class="material-symbols-outlined text-sm text-primary">expand_more</span>
+                </div>
+              </div>
+              <!-- Visualización del Tipo de Habitación -->
+              <div class="pt-6 border-t border-outline-variant/20 space-y-4">
+                <div class="flex justify-between items-center">
+                  <span class="text-sm text-secondary">Tarifa Base (6 Noches)</span>
+                  <span class="text-sm font-semibold">$5,100</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-sm text-secondary">Impuestos y Tarifas</span>
+                  <span class="text-sm font-semibold">$425</span>
+                </div>
+                <div class="flex justify-between items-center py-2">
+                  <span class="serif-text text-lg">Total</span>
+                  <span class="serif-text text-xl font-bold text-primary">$5,525</span>
+                </div>
+              </div>
+              <!-- Botones de Acción -->
+              <div class="space-y-3 pt-4">
+                <button
+                  class="w-full bg-primary text-on-primary py-4 font-label text-xs uppercase tracking-[0.2em] hover:bg-primary/90 transition-colors shadow-lg"
+                  type="button">
+                  Confirmar Reserva
+                </button>
+                <button
+                  class="w-full py-4 font-label text-[10px] uppercase tracking-widest text-secondary hover:text-primary transition-colors underline underline-offset-8 decoration-primary/20"
+                  type="button">
+                  Guardar para Más Tarde
+                </button>
+              </div>
+            </form>
+            <!-- Insignia de Garantía -->
+            <div class="mt-8 pt-8 border-t border-outline-variant/20 flex items-center gap-4">
+              <div class="h-10 w-10 flex items-center justify-center bg-primary-fixed rounded-full text-primary">
+                <span class="material-symbols-outlined">verified_user</span>
+              </div>
+              <div>
+                <p class="text-[10px] font-label uppercase tracking-wider text-secondary">Mejor Tarifa Garantizada</p>
+                <p class="text-[11px] text-secondary opacity-70">Soporte de conserjería disponible 24/7 durante su estancia.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Consejo Útil -->
+          <div class="mt-6 p-6 bg-surface-container/50 rounded-sm border border-outline-variant/10">
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary text-lg">lightbulb</span>
+              <p class="text-xs leading-relaxed text-on-surface-variant">
+                <span class="font-bold">Consejo del Conserje:</span> Los huéspedes que reserven el Penthouse esta semana reciben
+                traslado gratuito al aeropuerto en nuestra limusina eléctrica exclusiva.
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

@@ -1,1 +1,197 @@
+<!DOCTYPE html>
 
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Holiday Estate - Login</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300&amp;family=Manrope:wght@200;300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-container": "#656464",
+                        "primary-fixed-dim": "#e9c176",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#e4e2e1",
+                        "surface-dim": "#dbdad7",
+                        "secondary": "#5f5e5e",
+                        "outline": "#7f7667",
+                        "on-primary-container": "#4e3700",
+                        "surface-bright": "#faf9f6",
+                        "on-tertiary-fixed-variant": "#494640",
+                        "tertiary-fixed": "#e8e2d9",
+                        "surface-container-highest": "#e3e2e0",
+                        "surface": "#faf9f6",
+                        "inverse-primary": "#e9c176",
+                        "error": "#ba1a1a",
+                        "primary-container": "#c5a059",
+                        "on-secondary-fixed-variant": "#474747",
+                        "tertiary": "#615e57",
+                        "outline-variant": "#d1c5b4",
+                        "on-background": "#1a1c1a",
+                        "primary-fixed": "#ffdea5",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "surface-container": "#efeeeb",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#cbc6bd",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#775a19",
+                        "surface-container-low": "#f4f3f1",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-surface-variant": "#4e4639",
+                        "secondary-container": "#e4e2e1",
+                        "inverse-surface": "#2f312f",
+                        "inverse-on-surface": "#f2f1ee",
+                        "tertiary-container": "#aaa59d",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#775a19",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "background": "#faf9f6",
+                        "on-primary-fixed": "#261900",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#3e3b35",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e3e2e0",
+                        "surface-container-high": "#e9e8e5",
+                        "on-surface": "#1a1c1a",
+                        "on-tertiary-fixed": "#1d1b16"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .glassmorphism-bg {
+            background: rgba(250, 249, 246, 0.8);
+            backdrop-filter: blur(12px);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+    <main class="min-h-screen flex flex-col md:flex-row overflow-hidden">
+        <section
+            class="w-full md:w-[450px] lg:w-[550px] flex flex-col justify-between p-8 md:p-16 lg:p-24 z-10 bg-surface">
+            <header class="mb-12">
+                <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary text-3xl"
+                        data-icon="auto_awesome">auto_awesome</span>
+                    <span class="font-headline text-xl tracking-widest text-primary uppercase">Holiday Estate</span>
+                </div>
+            </header>
+            <div class="flex-grow flex flex-col justify-center">
+                <div class="space-y-2 mb-10">
+                    <h1 class="font-headline text-4xl lg:text-5xl text-on-surface font-light leading-tight">Bienvenido
+                        de nuevo</h1>
+                    <p class="text-secondary font-light text-sm tracking-wide uppercase">Sistema de Gestión de Lujo</p>
+                </div>
+                <form class="space-y-8" onsubmit="return false;">
+                    <div class="space-y-6">
+                        <div class="group relative">
+                            <label
+                                class="block font-label text-[10px] uppercase tracking-[0.1em] text-secondary mb-2 transition-colors group-focus-within:text-primary"
+                                for="username">Usuario</label>
+                            <input
+                                class="w-full bg-surface-container-high border-none rounded-none py-4 px-4 text-on-surface font-light focus:ring-1 focus:ring-primary/30 transition-all placeholder:text-outline-variant"
+                                id="username" name="username" placeholder="usuario" type="text" />
+                        </div>
+                        <div class="group relative">
+                            <label
+                                class="block font-label text-[10px] uppercase tracking-[0.1em] text-secondary mb-2 transition-colors group-focus-within:text-primary"
+                                for="password">Contraseña</label>
+                            <div class="relative">
+                                <input
+                                    class="w-full bg-surface-container-high border-none rounded-none py-4 px-4 text-on-surface font-light focus:ring-1 focus:ring-primary/30 transition-all placeholder:text-outline-variant"
+                                    id="password" name="password" placeholder="••••••••" type="password" />
+                                <button
+                                    class="absolute right-4 top-1/2 -translate-y-1/2 text-secondary hover:text-primary transition-colors"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-xl"
+                                        data-icon="visibility_off">visibility_off</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center justify-between text-xs lg:text-sm font-label uppercase tracking-wider">
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input
+                                class="w-4 h-4 rounded-none border-outline-variant text-primary focus:ring-0 focus:ring-offset-0 bg-transparent"
+                                type="checkbox" />
+                            <span class="text-secondary group-hover:text-on-surface transition-colors">Recordar
+                                sesión</span>
+                        </label>
+                        <a class="text-primary hover:text-primary-container transition-colors underline underline-offset-4 decoration-primary/30"
+                            href="#">¿Olvidaste tu contraseña?</a>
+                    </div>
+                    <button
+                        class="w-full bg-primary-container hover:bg-primary text-on-primary py-5 px-8 font-label text-sm uppercase tracking-[0.15em] font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-sm hover:shadow-md"
+                        type="submit">
+                        Iniciar Sesión
+                        <span class="material-symbols-outlined text-lg"
+                            data-icon="arrow_right_alt">arrow_right_alt</span>
+                    </button>
+                </form>
+            </div>
+            <footer class="mt-12">
+                <p class="text-[10px] uppercase tracking-[0.1em] text-on-secondary-container opacity-60">
+                    © 2024 Holiday Estate Luxury Management. v2.4.0
+                </p>
+            </footer>
+        </section>
+        <section class="hidden md:block flex-1 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-surface to-transparent w-32 z-10"></div>
+            <div class="absolute inset-0 bg-on-background/10 z-0"></div>
+            <img alt="Luxury Hotel Lobby"
+                class="w-full h-full object-cover transform scale-105 hover:scale-100 transition-transform duration-[10s] ease-out"
+                data-alt="Luxurious hotel lobby with warm golden lighting, marble floors, velvet seating, and elegant architectural details in a soft editorial style"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqtMUC4spVGYzeYlkUQVUccHhn2fpbqNPPwP7KJCM72GHhdPsaRU4ePQ9wDO5DO4Ohodl6NWKFx9KDFEfGxJB0VZKk-6UrDyW5IdE0ALQAU5Ny29G7aHIa9PqLdidZm-ze76w61yJ0TgnVDoDEWAxUC2dNjjbOlYG1HEzVXaMVJvqzS9hsCK5tnuPpu0r2TcKx6eGlRip9I0WjOqTtez5ZpHg-EBWEtxCM1KTs4uPo_whgFhDt4lNDbu_q_IGMJHEYzxMtCl-QoxU" />
+            <div class="absolute bottom-16 left-16 right-16 z-20">
+                <div class="glassmorphism-bg p-10 max-w-xl">
+                    <span class="material-symbols-outlined text-primary mb-4 block"
+                        data-icon="format_quote">format_quote</span>
+                    <p class="font-headline text-2xl text-on-surface font-light italic mb-6 leading-relaxed">
+                        "La verdadera excelencia no es un acto, sino un hábito de atención impecable a cada detalle."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="h-[1px] w-8 bg-primary"></div>
+                        <p class="font-label text-xs uppercase tracking-[0.2em] text-secondary">Holiday Concierge
+                            Services</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
