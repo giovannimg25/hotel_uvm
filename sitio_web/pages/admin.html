@@ -437,5 +437,58 @@
     </div>
   </main>
 </body>
+<!-- Al final del body, antes de </body> -->
+<script>
+    const API = 'http://localhost:3001/api';
+    
+    async function cargarDashboard() {
+        try {
+            const res = await fetch(`${API}/admin/kpis`);
+            const data = await res.json();
+            
+            // Ocupación
+            const ocupacionValor = document.querySelector('.border-l-4.border-primary .text-4xl');
+            if (ocupacionValor) ocupacionValor.innerText = `${data.ocupacion.porcentaje}%`;
+            const variacionSpan = document.querySelector('.border-l-4.border-primary .text-primary');
+            if (variacionSpan) variacionSpan.innerText = `+${(data.ocupacion.porcentaje - 90).toFixed(1)}% vs semana pasada`;
+            
+            // Ingresos
+            const ingresosValor = document.querySelector('.bg-surface-container-lowest .text-4xl.text-secondary');
+            if (ingresosValor) ingresosValor.innerText = `$${(data.ingresos.total / 1000).toFixed(0)}k`;
+            const barraIngresos = document.querySelector('.bg-primary.h-full');
+            if (barraIngresos) barraIngresos.style.width = `${(data.ingresos.total / data.ingresos.meta) * 100}%`;
+            
+            // Llegadas hoy
+            const llegadasValor = document.querySelector('.bg-surface-container-lowest .text-4xl.font-headline:not(.text-secondary)');
+            if (llegadasValor) llegadasValor.innerText = data.huespedes_hoy;
+            
+            // Actividad reciente
+            const actividadContainer = document.querySelector('.space-y-6');
+            if (actividadContainer && data.actividad_reciente.length) {
+                actividadContainer.innerHTML = data.actividad_reciente.map(act => `
+                    <div class="flex gap-6 group">
+                        <div class="relative">
+                            <div class="h-10 w-10 rounded-sm bg-surface-container-high flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary">event_note</span>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start">
+                                <h4 class="text-sm font-bold text-on-surface">${act.accion}</h4>
+                                <span class="text-[10px] text-secondary">${new Date(act.created_at).toLocaleTimeString()}</span>
+                            </div>
+                            <p class="text-sm text-on-surface-variant mt-1">${act.detalle} <span class="text-on-surface font-semibold">${act.usuario}</span></p>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        } catch (error) {
+            console.error('Error cargando dashboard:', error);
+        }
+    }
+    
+    cargarDashboard();
+    setInterval(cargarDashboard, 30000);
+</script>
 
 </html>
